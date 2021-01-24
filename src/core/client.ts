@@ -40,51 +40,51 @@ import { StatusRepository } from '../repositories/status.repository';
 import { IgtvRepository } from '../repositories/igtv.repository';
 
 export class IgApiClient {
-  public state = new State();
-  public request = new Request(this);
-  public feed = new FeedFactory(this);
-  public entity = new EntityFactory(this);
-  /* Repositories */
-  public account = new AccountRepository(this);
-  public attribution = new AttributionRepository(this);
-  public challenge = new ChallengeRepository(this);
-  public consent = new ConsentRepository(this);
-  public creatives = new CreativesRepository(this);
-  public direct = new DirectRepository(this);
-  public directThread = new DirectThreadRepository(this);
-  public discover = new DiscoverRepository(this);
-  public fbsearch = new FbsearchRepository(this);
-  public friendship = new FriendshipRepository(this);
-  public launcher = new LauncherRepository(this);
-  public linkedAccount = new LinkedAccountRepository(this);
-  public loom = new LoomRepository(this);
-  public media = new MediaRepository(this);
-  public qe = new QeRepository(this);
-  public qp = new QpRepository(this);
-  public tag = new TagRepository(this);
-  public upload = new UploadRepository(this);
-  public user = new UserRepository(this);
-  public zr = new ZrRepository(this);
-  public live = new LiveRepository(this);
-  public location = new LocationRepository(this);
-  public locationSearch = new LocationSearch(this);
-  public music = new MusicRepository(this);
-  public news = new NewsRepository(this);
-  public highlights = new HighlightsRepository(this);
-  public ads = new AdsRepository(this);
-  public restrictAction = new RestrictActionRepository(this);
-  public addressBook = new AddressBookRepository(this);
-  public status = new StatusRepository(this);
-  public igtv = new IgtvRepository(this);
-  /* Services */
-  public publish = new PublishService(this);
-  public search = new SearchService(this);
-  public simulate = new SimulateService(this);
-  public story = new StoryService(this);
-  public insights = new InsightsService(this);
+	public state = new State();
+	public request = new Request(this);
+	public feed = new FeedFactory(this);
+	public entity = new EntityFactory(this);
+	/* Repositories */
+	public account = new AccountRepository(this);
+	public attribution = new AttributionRepository(this);
+	public challenge = new ChallengeRepository(this);
+	public consent = new ConsentRepository(this);
+	public creatives = new CreativesRepository(this);
+	public direct = new DirectRepository(this);
+	public directThread = new DirectThreadRepository(this);
+	public discover = new DiscoverRepository(this);
+	public fbsearch = new FbsearchRepository(this);
+	public friendship = new FriendshipRepository(this);
+	public launcher = new LauncherRepository(this);
+	public linkedAccount = new LinkedAccountRepository(this);
+	public loom = new LoomRepository(this);
+	public media = new MediaRepository(this);
+	public qe = new QeRepository(this);
+	public qp = new QpRepository(this);
+	public tag = new TagRepository(this);
+	public upload = new UploadRepository(this);
+	public user = new UserRepository(this);
+	public zr = new ZrRepository(this);
+	public live = new LiveRepository(this);
+	public location = new LocationRepository(this);
+	public locationSearch = new LocationSearch(this);
+	public music = new MusicRepository(this);
+	public news = new NewsRepository(this);
+	public highlights = new HighlightsRepository(this);
+	public ads = new AdsRepository(this);
+	public restrictAction = new RestrictActionRepository(this);
+	public addressBook = new AddressBookRepository(this);
+	public status = new StatusRepository(this);
+	public igtv = new IgtvRepository(this);
+	/* Services */
+	public publish = new PublishService(this);
+	public search = new SearchService(this);
+	public simulate = new SimulateService(this);
+	public story = new StoryService(this);
+	public insights = new InsightsService(this);
 
-  public destroy() {
-    this.request.error$.complete();
-    this.request.end$.complete();
-  }
+	public destroy() {
+		this.request.error$.complete();
+		this.request.end$.complete();
+	}
 }
