@@ -1,4 +1,4 @@
-/* tslint:disable:no-console */
+import 'dotenv/config';
 import { DirectThreadEntity, IgApiClient } from '../src';
 import { promisify } from 'util';
 import { readFile } from 'fs';
@@ -18,13 +18,13 @@ async function login() {
 (async () => {
 	await login();
 
-	// get the first thread
-	const [thread] = await ig.feed.directInbox().records();
+	// const [thread] = await ig.feed.directInbox().records(); // the first thread
+	const thread = ig.entity.directThread(['410583523']); // IG user id
 
 	await sendPhoto(thread);
-	await sendVideo(thread);
-	await sendPhotoStory(thread);
-	await sendVideoStory(thread);
+	// await sendVideo(thread);
+	// await sendPhotoStory(thread);
+	// await sendVideoStory(thread);
 })();
 
 /**
@@ -32,7 +32,7 @@ async function login() {
  * @param thread
  */
 async function sendPhoto(thread: DirectThreadEntity) {
-	const photo: Buffer = await readFileAsync('PATH_TO_PHOTO.jpg');
+	const photo: Buffer = await readFileAsync('./dog.jpg');
 	console.log(
 		await thread.broadcastPhoto({
 			file: photo,
